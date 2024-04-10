@@ -1,0 +1,36 @@
+<ng-template #blankImage>
+  <p>No image</p>
+  <img src="../../assets/img/non-img.jpg" style="width: 20%" />
+</ng-template>
+
+<div class="card">
+  <span [ngClass]="employee.rank">
+    <img
+      *ngIf="employee.iconUrl; else blankImage"
+      src="{{ employee.iconUrl }}"
+      alt="Avatar"
+      style="width: 20%"
+    />
+    <div class="container">
+      <h4>
+        <b [ngStyle]="onCheckRank(employee.rank)">{{ employee.name }}</b>
+      </h4>
+      <p>{{ employee.rank }}</p>
+    </div>
+    <div [ngSwitch]="employee.rank">
+      <span class="junior" *ngSwitchCase="'junior'"> Necesita Ayuda</span>
+      <span class="senior" *ngSwitchCase="'senior'">Lidera un equipo</span>
+    </div>
+
+    <!-- <div [ngSwitch]="employee.rank == 'senior'">
+        <span class="senior">Lidera un equipo</span>
+      </div>
+
+      <div [ngSwitch]="employee.rank == 'junior'">
+        <span class="junior">Necesita Ayuda</span>
+      </div> -->
+
+    <button (click)="onEmployeeChecked(employee)">Check Employee</button>
+  </span>
+  <ng-content select=".content-1"></ng-content>
+</div>

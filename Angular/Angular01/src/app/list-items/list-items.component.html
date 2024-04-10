@@ -1,0 +1,52 @@
+<main class="list-container">
+  <div class="list-content">
+    <h1>Our People</h1>
+    <div class="card-container">
+      <ng-container *ngFor="let employee of employeesList">
+        <!-- @for(employee of employeesList){
+            <app-item-card
+          (employeeSelected)="onEmployeeChecked($event)"
+          [employee]="employee"
+        ></app-item-card>
+        } -->
+        <app-item-card
+          #component
+          (employeeSelected)="onEmployeeChecked($event)"
+          [employee]="employee"
+          ><h4 #contentProjectionRef class="content-1">Content Poryection 1</h4>
+          <h4 class="content-2">Content Poryection 2</h4>
+          <h4>Content Poryection 3</h4></app-item-card
+        >
+      </ng-container>
+      <!-- <ng-container *ngFor="let book of booksList">
+        <app-book [booksList]="book"></app-book>
+      </ng-container> -->
+
+      <!-- <app-item-card
+        (employeeSelected)="onEmployeeChecked($event)"
+        [employee]="firstEmployee"
+      ></app-item-card>
+      <app-item-card
+        (employeeSelected)="onEmployeeChecked($event)"
+        [employee]="secondEmployee"
+      ></app-item-card>
+      <app-item-card
+        (employeeSelected)="onEmployeeChecked($event)"
+        [employee]="thirdEmployee"
+      ></app-item-card>
+      <app-item-card
+        (employeeSelected)="onEmployeeChecked($event)"
+        [employee]="fourthEmployee"
+      ></app-item-card> -->
+    </div>
+  </div>
+
+  <h4 #todayRef>Today: {{ today | date : "dd/MM/YYYY" }}</h4>
+
+  <h4>
+    Selected Employee: @if(selectedEmployee){
+    <span>{{ selectedEmployee.name }}</span>
+    }
+    <!-- <span *ngIf="selectedEmployee">{{ selectedEmployee.name }}</span> -->
+  </h4>
+</main>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Diego Anton",
+    "age": "30",
+    "description": "Ingeniero informatico",
+    "iconUrl": "",
+    "gender": "male",
+    "role": "Desarrollador Software",
+    "isActive": true,
+    "rank": "senior"
+  },
+  {
+    "id": 2,
+    "name": "Antonia Mateo",
+    "age": "30",
+    "description": "Ingeniero informatico",
+    "iconUrl": "",
+    "gender": "female",
+    "role": "Desarrollador Software",
+    "isActive": true,
+    "rank": "junior"
+  },
+  {
+    "id": 3,
+    "name": "Anton Perez",
+    "age": "30",
+    "description": "Ingeniero informatico",
+    "iconUrl": "",
+    "gender": "male",
+    "role": "Desarrollador Software",
+    "isActive": false,
+    "rank": "senior"
+  }
+]
