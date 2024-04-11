@@ -15,10 +15,21 @@ import { HelpCenterComponent } from './help-center/help-center.component';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { BookComponent } from './book/book.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, HeaderComponent, FooterComponent, MainComponent, HelpCenterComponent, ListItemsComponent, ItemCardComponent, BookComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    HelloWorldComponent,
+    HeaderComponent,
+    FooterComponent,
+    MainComponent,
+    HelpCenterComponent,
+    ListItemsComponent,
+    ItemCardComponent,
+    BookComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

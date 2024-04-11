@@ -11,6 +11,8 @@ import { Employee } from '../../models/employee';
 import { books } from '../../assets/fixtures/books';
 import { DatePipe } from '@angular/common';
 import { ItemCardComponent } from '../item-card/item-card.component';
+import { Subscription } from 'rxjs';
+import { MockService } from '../services/mock.service';
 
 @Component({
   selector: 'app-list-items',
@@ -18,8 +20,10 @@ import { ItemCardComponent } from '../item-card/item-card.component';
   styleUrl: './list-items.component.css',
 })
 export class ListItemsComponent {
+  // works as getElementbyID
   @ViewChild('todayRef') todayRef?: ElementRef;
 
+  // RECOGE todos los objetos
   @ViewChildren('component')
   cards!: QueryList<ItemCardComponent>;
 
@@ -33,8 +37,9 @@ export class ListItemsComponent {
   booksList: any;
   datepipe: DatePipe = new DatePipe('en-US');
   tomorrow?: any;
+  subscription?: Subscription;
 
-  constructor() {
+  constructor(private mockService: MockService) {
     /*this.firstEmployee = employees[0];
     this.secondEmployee = employees[1];
     this.thirdEmployee = employees[2];
@@ -48,6 +53,13 @@ export class ListItemsComponent {
 
   onEmployeeChecked(employee: Employee) {
     this.selectedEmployee = employee;
+  }
+
+  ngOnInit() {
+    // Metodo ideal para traer data de API
+    this.subscription = this.mockService.getEmployees().subscribe((data) => {
+      this.employeesList = data;
+    });
   }
 
   ngAfterViewInit() {
