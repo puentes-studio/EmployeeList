@@ -74,4 +74,12 @@ export class ListItemsComponent {
     console.log(this.tomorrow);
     console.log(this.cards);
   }
+
+  ngOnDestroy() {
+    console.log('onDestroy');
+
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }
