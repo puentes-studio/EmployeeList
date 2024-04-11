@@ -55,6 +55,10 @@ export class ListItemsComponent {
     this.selectedEmployee = employee;
   }
 
+  ngOnChanges(changes: any) {
+    console.log('ngOnChanges - ItemCardComponent', changes);
+  }
+
   ngOnInit() {
     // Metodo ideal para traer data de API
     this.subscription = this.mockService.getEmployees().subscribe((data) => {
@@ -76,6 +80,7 @@ export class ListItemsComponent {
   }
 
   ngOnDestroy() {
+    // to close the service and clean cache, navegation.
     console.log('onDestroy');
 
     if (this.subscription) {
