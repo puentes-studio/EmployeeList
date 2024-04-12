@@ -1,9 +1,11 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { HelloWorldComponent } from './hello-world/hello-world.component';
+
 import { MainComponent } from './main/main.component';
 import { HelpCenterComponent } from './help-center/help-center.component';
 import { ListItemsComponent } from './list-items/list-items.component';
+import { BookComponent } from './book/book.component';
+import { ListBookComponent } from './list-book/list-book.component';
 
 const routes: Routes = [
   {
@@ -18,10 +20,10 @@ const routes: Routes = [
     path: 'peoplelist',
     component: ListItemsComponent,
   },
-  // {
-  //   path: 'books',
-  //   component: ListItemsComponent,
-  // },
+  {
+    path: 'bookslist',
+    component: ListBookComponent,
+  },
 ];
 
 @NgModule({

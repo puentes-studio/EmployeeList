@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { books } from '../../assets/fixtures/books';
+import { Component, Input } from '@angular/core';
+// import { Books } from '../../models/books.models';
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrl: './book.component.css',
+  styleUrls: ['./book.component.css'], // Use styleUrls instead of styleUrl
 })
 export class BookComponent {
-  // booksList: books;
+  @Input() book: any; // Define input property 'book'
 }

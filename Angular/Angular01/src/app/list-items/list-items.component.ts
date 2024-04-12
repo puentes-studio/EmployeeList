@@ -7,12 +7,14 @@ import {
   viewChildren,
 } from '@angular/core';
 import { employees } from '../../assets/fixtures/employees';
+
 import { Employee } from '../../models/employee';
-import { books } from '../../assets/fixtures/books';
+
 import { DatePipe } from '@angular/common';
 import { ItemCardComponent } from '../item-card/item-card.component';
 import { Subscription } from 'rxjs';
 import { MockService } from '../services/mock.service';
+import { BookComponent } from '../book/book.component';
 
 @Component({
   selector: 'app-list-items',
@@ -34,7 +36,6 @@ export class ListItemsComponent {
   selectedEmployee?: Employee;
   employeesList: any;
   today = new Date();
-  booksList: any;
   datepipe: DatePipe = new DatePipe('en-US');
   tomorrow?: any;
   subscription?: Subscription;
@@ -46,7 +47,6 @@ export class ListItemsComponent {
     this.fourthEmployee = employees[3];*/
 
     this.employeesList = employees;
-    this.booksList = books;
     console.log('Here');
     console.log(this.todayRef?.nativeElement.innerText);
   }

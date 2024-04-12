@@ -16,6 +16,7 @@ import { ListItemsComponent } from './list-items/list-items.component';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { BookComponent } from './book/book.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ListBookComponent } from './list-book/list-book.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ListItemsComponent,
     ItemCardComponent,
     BookComponent,
+    ListBookComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],
