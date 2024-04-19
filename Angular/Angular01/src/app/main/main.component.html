@@ -1,11 +1,16 @@
 <main class="main">
   <div class="content">
-    <button (click)="onRedirect('helpcenter')" type="button">
+    <button class="pill" (click)="onRedirect('helpcenter')" type="button">
       Help Center
     </button>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <button (click)="onRedirect('peoplelist')" type="button">People</button>
+    <button class="pill" (click)="onRedirect('peoplelist')" type="button">
+      People
+    </button>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <button (click)="onRedirect('bookslist')" type="button">Books</button>
+    <button class="pill" (click)="onRedirect('bookslist')" type="button">
+      Books
+    </button>
   </div>
+  <div><app-hello-world /></div>
 </main>
